@@ -7,22 +7,29 @@
     <title>Rotating Shifts</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
     <main class="container">
-        <h1>Rotating Shifts</h1>
-
+        <hgroup>
+            <h1>Rotating Shifts</h1>
+            <p>Select the date when the first morning shift of your rotation starts</p>
+            <p>and the number of months you want to generate a schedule for.</p>
+        </hgroup>
         <form action="">
             <label for="date">
                 <span>Date</span>
-                <input type="date" name="date" id="date">
+                <input type="date" name="start-date" id="start-date">
             </label>
             <label for="months">
                 <span>Months</span>
-                <input type="number" name="months" id="months" min="1" max="12">
+                <input type="number" name="months" id="months" min="1" max="12" value="1">
             </label>
-            <input type="button" value="Calculate">
+            <input type="button" value="Generate Shifts" id="generate-button">
         </form>
+        <div id="schedule" class="secondary">
+        </div>
     </main>
 </body>
 </html>
